@@ -2,11 +2,13 @@ public class Studs {
     public static void main(String[] args) {
         double s = 1.5;
         double ttot = 0;
-        System.out.println(s + "    " + ttot);
+        double v = 0;
+        double s0;
+        int liNum = 0;
+        ballStart(s, ttot);
 
-        double v = 0; double s0;
         for (double x=5;ttot <= x; ttot += t) {
-            if (s <= 0 ) {
+            if (s <= 0) {
                 v = v * -1;
                 s0 = v * t;
                 s = s + s0;
@@ -15,13 +17,11 @@ public class Studs {
                 s0 = v * t + (a * (t * t)) / 2;
                 s = s + s0;
             }
-            System.out.println(s + "    " + ttot);
+            liNum = printList(s, ttot, liNum);
         }
-
-//        stuts(s,ttot);
     }
 
-    private static void stuts(double s, double ttot) {
+    private static void studs(double s, double ttot) {
         double v = 0; double s0;
         for (double x=5;ttot == x; ttot += t) {
             if (s >= 0 ) {
@@ -33,8 +33,17 @@ public class Studs {
                 s0 = v * t + (a * (t * t)) / 2;
                 s += s0;
             }
-            System.out.print(s + "    " + ttot);
+            //System.out.print(+liNum + ". " + s + "    " + ttot);
         }
+    }
+
+    private static int printList(double s, double ttot, int liNum) {
+        System.out.println(++liNum + ".    " + s + "    " + ttot);
+        return liNum;
+    }
+
+    private static void ballStart(double s, double ttot) {
+        System.out.println("0.   " + s + "    " + ttot);
     }
 
     private static final double a = -9.82;
